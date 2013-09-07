@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-    <html lang="es" ng-app>
+    <html lang="es" data-ng-app="phonecat">
     <head>
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <title>Demo 1</title>
             
             <script type="text/javascript" src="./assets/vendor/angularjs/1.0.8/angular.js"></script>
-            <script type="text/javascript" src="./assets/js/main.js"></script>
+            <script type="text/javascript" src="./assets/js/app.js"></script>
+            <script type="text/javascript" src="./assets/js/controllers.js"></script>
 
             <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/3.0.0/css/bootstrap.css">
     </head>
@@ -64,22 +65,12 @@
           </div>
         </div>
 
-        <div class="container" data-ng-controller="PhoneListCtrl">
-          <!-- Example row of columns -->
-          <div class="row">
-            <div class="col-lg-4" data-ng-repeat="phone in phones">
-              <h2>{{phone.name}}</h2>
-              <img class="img-thumbnail" src="./assets/img/phones/{{phone.img}}" alt="{{phone.name}}">
-              <p>{{phone.snipet}}</p>
-              <p><a class="btn btn-default" href="#">Ver detalles &raquo;</a></p>
-            </div>
-            
-          </div>
-
+        <div class="container">
+          <div data-ng-view></div>
           <hr>
 
           <footer>
-            <p>&copy; Company 2013</p>
+            <p>&copy; NonDeath 2013</p>
           </footer>
         </div> <!-- /container -->
     </body>
