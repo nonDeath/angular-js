@@ -3,10 +3,52 @@
     <h2>{{phone.name}}</h2>
     <div class="row">
       <div class="col-lg-4">
-        <img data-ng-src="{{phone.mainImg}}">
+        <p><img data-ng-src="./assets/{{phoneMainImg}}" class="img-thumbnail"></p>
+        <br>
+        <div class="row">
+          <div class="col-sm-6 col-md-3" data-ng-repeat="image in phone.images">
+            <p><a class="thumbnail" data-ng-click="setImage(image)"><img data-ng-src="./assets/{{image}}" class="img-responsive"></a></p>
+          </div>
+        </div>
       </div>
       <div class="col-lg-8">
+        <p>{{phone.description}}</p>
+        <p><strong>Características Adicionales:</strong>&nbsp;{{phone.additionalFeatures}}</p>
+        <div class="row"> 
+          <div class="col-md-4">
+            <dl>
+              <dt>Android</dt>
+              <dd>{{phone.android.os}}</dd>
+              <dt>IU</dt>
+              <dd>{{phone.android.ui}}</dd>
+            </dl>
+          </div>
+          <div class="col-md-4">
+            <dl>
+              <dt>Batería en modo standby</dt>
+              <dd>{{phone.battery.standbyTime}}</dd>
+              <dt>Tiempo de llamadas</dt>
+              <dd>{{phone.battery.talkTime}}</dd>
+            </dl>
+          </div>
+          <div class="col-md-4">
+            <dl>
+              <dt>Almacenamiento externo</dt>
+              <dd>{{phone.storage.flash}}</dd>
+              <dt>Almacenamiento interno</dt>
+              <dd>{{phone.storage.ram}}</dd>
+            </dl>
+          </div>
+        </div>
+        <p><strong>Hardware</strong></p>
+        <ul class="list-unstyled">
+          <li>Acelerometro <span class="glyphicon glyphicon-{{phone.hardware.accelerometer | checkmark}}"></span>
 
+          </li>
+          <li>Entrada de audio {{phone.hardware.audioJack}}</li>
+          <li>CPU {{phone.hardware.cpu}}</li>
+          <li>Radio FM <span class="glyphicon glyphicon-{{phone.hardware.fmRadio | checkmark}}"></span></li>
+        </ul>
       </div>
     </div>
   </div>

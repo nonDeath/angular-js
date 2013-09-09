@@ -1,5 +1,5 @@
 
-angular.module('phonecat', []).
+angular.module('phonecat', ['phonecatFilters', 'phonecatServices']).
     config(['$routeProvider', 
         function ($routeProvider) {
             $routeProvider.

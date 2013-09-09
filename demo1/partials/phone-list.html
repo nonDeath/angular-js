@@ -18,17 +18,22 @@
 </div>
 <br>
 <div class="row">
-  <div class="col-sm-6 col-md-3" data-ng-repeat="phone in phones | filter:criterio | orderBy:ordenarPor">
-    <div class="thumbnail">
-      <img data-ng-src="./assets/{{phone.imageUrl}}" alt="{{phone.name}}">
-      <div class="caption" style="height: 200px;">
-        <h3>{{phone.name}}</h3>
-        <p style="height: 40px; overflow: hidden;">{{phone.snippet}}</p>
-        <p><a href="#/phones/{{phone.id}}" class="btn btn-primary">Más detalles</a> <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></a>
-</p>
+  <ul class="list list-unstyled">
+    <li class="col-sm-6 col-md-3" data-ng-repeat="phone in phones | filter:criterio | orderBy:ordenarPor">
+      <div class="thumbnail">
+        <img data-ng-src="./assets/{{phone.imageUrl}}" alt="{{phone.name}}">
+        <div class="caption" style="height: 200px;">
+          <h3>{{phone.name}}</h3>
+          <p style="height: 40px; overflow: hidden;">{{phone.snippet}}</p>
+          <p>
+            <a href="#/phones/{{phone.id}}" class="btn btn-primary">Más detalles</a>&nbsp;
+            <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></a>
+          </p>
+        </div>      
       </div>
-    </div>
-  </div>
+      <br/>
+    </li>
+  </ul>
 </div>
 <br>
 <div class="row">
